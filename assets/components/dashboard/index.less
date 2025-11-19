@@ -1,4 +1,4 @@
-// TODO
+// Modern dashboard styling
 @media (min-width: 1400px){
     .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
     max-width: 100%;
@@ -9,28 +9,32 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    margin-bottom: @gap;
+    margin-bottom: @gap-lg;
     .dashboard-items{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
         width: 100%;
-        gap:@gap;
+        gap: @gap-lg;
         @media @query[xs]{
             flex-direction: column;
         }
         a.dashboard--item{
-            height: calc(@gap*5);
+            height: 120px;
             color: @g7;
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            width: calc(25% - 15px);
-            /*&:nth-of-type(4n){
-                margin-right: 0px;
-            }*/
+            width: calc(25% - @gap-md);
+            background-color: @g1;
+            border-radius: @radius-md;
+            overflow: hidden;
+            .elevation-2();
+            .transition(250ms);
+            
             &:hover{
-                .shadow();
+                .elevation-4();
+                transform: translateY(-2px);
             }
             @media @query[xs]{
                 width: 100%;
@@ -38,38 +42,48 @@
                 margin-right: 0px;
             }
             i.icon{
-                background-color: @c1;
+                background: linear-gradient(135deg, @c1 0%, .mixDark(@c1, 85)[] 100%);
                 width: 33.33%;
                 color: @g1;
                 position: relative;
                 height: 100%;
                 display: flex;
-                font-size: calc(@gap*1.5);
-                min-width: calc(@gap*2);
+                font-size: @gap-xl;
+                min-width: 80px;
                 justify-content: center;
                 align-items: center;
+                .transition(250ms);
                 @media @query[xs]{
                     width: 25%;
                 }
             }
             .dashboard--context{
-                padding: @gap;
+                padding: @gap-md @gap-lg;
                 background-color: @g1;
                 width: 100%;
                 height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                
                 p{
                     font-family: @titlefont;
+                    font-weight: @font-weight-semibold;
+                    font-size: @font-size-md;
                     display: block;
                     width: 100%;
-                    line-height: 130%;
-                    font-weight: bold;
+                    line-height: 1.4;
+                    color: @g8;
+                    margin: 0;
 
                     span{
                         font-family: @copyfont;
                         display: block;
-                        font-weight: normal;
+                        font-weight: @font-weight-normal;
+                        font-size: @font-size-sm;
+                        color: @g6;
                         width: 100%;
-                        margin-top: calc(@gap/2);
+                        margin-top: @gap-xs;
                         @media @query[xs]{
                             margin-top: 0;
                         }

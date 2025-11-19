@@ -5,23 +5,30 @@
     flex-direction: row;
     justify-content: space-between;
     background-color: @g1;
-    width: 75%;
+    width: 85%;
+    max-width: 1200px;
     position: relative;
     margin: auto auto;
-    .shadow();
+    border-radius: @radius-lg;
+    overflow: hidden;
+    .elevation-4();
     @media @query[xs]{
         flex-direction: column;
         width: 100%;
+        border-radius: 0;
     }
     .login--description{
         position: absolute;
         z-index: 1;
-        left: @gap;
-        right: @gap;
-        bottom: @gap;
-        padding: @gap;
-        width: calc(50% - @gap*2);
-        .rgba();
+        left: @gap-lg;
+        right: @gap-lg;
+        bottom: @gap-lg;
+        padding: @gap-lg;
+        width: calc(50% - @gap-xl);
+        background: rgba(9, 30, 66, 0.85);
+        border-radius: @radius-md;
+        color: @g1;
+        backdrop-filter: blur(10px);
         @media @query[xs]{
             display: none;
         }
@@ -41,7 +48,7 @@
         }
     }
     .login--content{
-        padding: @gap;
+        padding: @gap-xl;
         width: 50%;
         display: flex;
         justify-content: center;
@@ -50,61 +57,78 @@
         position: relative;
         @media @query[xs]{
             width: 100%;
+            padding: @gap-lg;
         }
         .login--heading{
-            width: 25%;
+            width: 40%;
+            margin-bottom: @gap-lg;
+            @media @query[xs]{
+                width: 60%;
+            }
             img{
                 width: 100%;
                 height: auto;
             }
         }
         form{
-            width: 75%;
+            width: 85%;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            margin-top: calc(@gap);
             
             .form-group{
                 width: 100%;
-                margin: calc(@gap/2) 0px;
+                margin: @gap-md 0px;
+
+                label {
+                    font-weight: @font-weight-medium;
+                    color: @g7;
+                    margin-bottom: @gap-xs;
+                    display: block;
+                }
 
                 button{
-                    margin: 0 auto;
+                    margin: @gap-md auto 0;
                     display: block;
-                    padding-left: calc(@gap*2);
-                    padding-right: calc(@gap*2);
+                    padding-left: @gap-xl;
+                    padding-right: @gap-xl;
                 }
                 &:last-of-type{
                     margin-bottom: 0px;
                 }
             }
             input:not([type="checkbox"]) {
-                border: none;
-                border-bottom: solid 1px @g2;
-                border-radius: 0;
+                border: 1px solid @g4;
+                border-radius: @radius;
+                padding: @gap-sm @gap-md;
+                background-color: @g1;
+                .transition(200ms);
 
                 &:focus {
                     outline: none;
-                    border: none;
+                    border-color: @c1;
+                    box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.1);
                 }
             }
         }
 
         .login_additional {
             text-align: center;
-            margin-top: 30px;
+            margin-top: @gap-lg;
 
             ul {
                 padding-left: 0;
                 li {
                     display: inline-block;
-                    margin-left: 10px;
+                    margin-left: @gap-md;
                     a {
                         color: @g6;
+                        font-size: @font-size-sm;
+                        .transition(200ms);
+                        
                         &:hover {
-                            color: @g7;
+                            color: @c1;
                         }
                     }
                     
@@ -119,17 +143,19 @@
 
 .dropdown.dropdown-language-switch-flags {
     position: absolute;
-    bottom: 10px;
-    right: 15px;
+    bottom: @gap-md;
+    right: @gap-lg;
     ul {
-        background-color: transparent;
-        border: none;
+        background-color: @g1;
+        border: 1px solid @g3;
+        border-radius: @radius;
         min-width: unset;
         width: max-content;
         transform: translate(-13px, -38px) !important;
+        .elevation-2();
 
         a:active {
-            background-color: transparent;
+            background-color: @g2;
         }
     }
 }

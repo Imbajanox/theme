@@ -1,29 +1,38 @@
 header{
-    background-color: @g7;
+    background-color: @g1;
+    border-bottom: 1px solid @g3;
     position: fixed;
     z-index: 9999;
     width: 100%;
     left: 0;
     top: 0;
+    height: @header-height;
     display: flex;
     justify-content: flex-start;
-    padding: 0px calc(@gap/2) 0px 0px;
+    padding: 0px @gap-md 0px 0px;
     align-items: center;
     box-sizing: border-box;
+    .elevation-2();
+    
     > a{
         width: @menuwidth;
-        padding-left: @gap;
+        padding-left: @gap-lg;
         display: block;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        border-right: 1px solid @g3;
+        .transition(300ms);
+        
         .logo{
             width: 100%;
             display: flex;
             justify-content: flex-start;
-            align-items: start;
-            padding: calc(@gap/4) calc(@gap/4) calc(@gap/4) 0px;
+            align-items: center;
             margin: 0;
             img{
                 max-width: 100%;
-                max-height: calc(@gap*1.5);
+                max-height: 36px;
                 display: block;
             }
         }
@@ -32,12 +41,13 @@ header{
         display: none;
     }
     i.icon{
-        color: @g1;
+        color: @g7;
     }
     .pageTitle {
-        color: @g1;
-        padding-left: calc( @gap * 2.5 );
-        font-size: 18px;
+        color: @g7;
+        padding-left: @gap-xl;
+        font-size: @font-size-lg;
+        font-weight: @font-weight-semibold;
         position: relative;
         display: flex;
         align-items: center;
@@ -45,9 +55,15 @@ header{
         i.editable-title-pen.icon {
             color: @c1;
             cursor: pointer;
-            font-size: 14px;
+            font-size: @font-size-sm;
             display: none;
-            margin-left: 5px;
+            margin-left: @gap-xs;
+            opacity: 0.7;
+            .transition(200ms);
+            
+            &:hover {
+                opacity: 1;
+            }
         }
         &:hover {
             i.editable-title-pen.icon {
@@ -58,8 +74,7 @@ header{
         .help--plain {
             position: relative;
             display: inline-block;
-            padding: calc(@gap / 2) calc(@gap) calc(@gap / 2) calc(@gap);
-            
+            padding: calc(@gap / 2) @gap-md;
             line-height: 10px;
             font-size: 10px;
     
@@ -93,10 +108,11 @@ header{
             align-items: center;
     
             span {
-                padding: 5px 20px;
-                color: @g1;
+                padding: @gap-xs @gap-md;
+                color: @g7;
                 display: inline-block;
                 cursor: help;
+                .transition(200ms);
             }
             
             p {
@@ -109,7 +125,6 @@ header{
                 }
             }
 
-
             .tippy-box {
                 max-width: 650px!important;
                 .tippy-content {
@@ -119,7 +134,7 @@ header{
         }
     
         .help--add-entry-field {
-            padding: 5px 20px;
+            padding: @gap-xs @gap-md;
             display: inline-block;
 
             > span {
@@ -127,7 +142,7 @@ header{
             }
             
             a {
-                font-size: 16px;
+                font-size: @font-size-md;
             }
         }
     }
@@ -137,16 +152,26 @@ header{
         display: flex;
         justify-content: flex-end;
         position: relative;
-        height: calc(@gap*2);
+        height: 100%;
         margin-left: auto;
+        gap: @gap-xs;
 
         > div > button, > div > a {
-            padding: calc( @gap / 2 ) calc( @gap/2 + 4px) calc(@gap/2) calc(@gap/2 + 4px);
-            display: block;
+            padding: @gap-sm @gap-md;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            border-radius: @radius;
+            .transition(200ms);
+
+            &:hover {
+                background-color: @g2;
+            }
 
             i {
-                font-size: 18px;
-                color: @g1;
+                font-size: @font-size-lg;
+                color: @g7;
 
                 &.fa-grip-horizontal {
                     margin-top: -2px;
@@ -166,8 +191,11 @@ header{
                 position: absolute;
                 left: 0;
                 top: 100%;
-                background-color: @g7;
-                padding: calc(@gap/2);
+                background-color: @g1;
+                padding: @gap-sm;
+                border-radius: @radius;
+                .elevation-3();
+                margin-top: @gap-xs;
                 
                 &.active{
                     display: flex;
@@ -175,8 +203,10 @@ header{
                 li{
                     display: flex;
                     justify-content: flex-end;
-                    margin-bottom: calc(@gap/4);
+                    margin-bottom: @gap-xs;
                     order: 2;
+                    .transition(200ms);
+                    
                     &:last-of-type{
                         margin: 0px;
                     }
@@ -184,8 +214,15 @@ header{
                         order: 1;
                     }
                     a{
-                        width: @gap;
+                        width: @gap-lg;
                         display: block;
+                        opacity: 0.7;
+                        .transition(200ms);
+                        
+                        &:hover {
+                            opacity: 1;
+                            transform: scale(1.1);
+                        }
                     }
                 }
             }
