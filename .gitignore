@@ -1,0 +1,19 @@
+# Vendor directory
+vendor/
+
+# Composer lock file
+composer.lock
+
+# PHPUnit cache
+.phpunit.result.cache
+
+# IDE files
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
