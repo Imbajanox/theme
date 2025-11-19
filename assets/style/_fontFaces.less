@@ -1,0 +1,22 @@
+@pfad: ~'/assets/election-theme/fonts';
+@font: ~'Roboto';
+
+.ff-import (@font, @data, @weight, @style: normal,) {
+        font-family: '@{font}';
+        src: local('@{@font}'), url('@{pfad}/@{data}.ttf') format('truetype');
+        font-weight: @weight;
+        font-style: @style;
+}
+
+@font-face { .ff-import(@font, 'Roboto-Thin', 100); }
+@font-face { .ff-import(@font, 'Roboto-ThinItalic', 100, italic); }
+@font-face { .ff-import(@font, 'Roboto-Light', 300); }
+@font-face { .ff-import(@font, 'Roboto-LightItalic', 300, italic); }
+@font-face { .ff-import(@font, 'Roboto-Regular', 400); }
+@font-face { .ff-import(@font, 'Roboto-Italic', 400, italic); }
+@font-face { .ff-import(@font, 'Roboto-Medium', 500); }
+@font-face { .ff-import(@font, 'Roboto-MediumItalic', 500, italic); }
+@font-face { .ff-import(@font, 'Roboto-Bold', 700); }
+@font-face { .ff-import(@font, 'Roboto-BoldItalic', 700, italic); }
+@font-face { .ff-import(@font, 'Roboto-Black', 900); }
+@font-face { .ff-import(@font, 'Roboto-BlackItalic', 900, italic); }

@@ -1,0 +1,350 @@
+.base{
+    width: 100%;
+}
+
+html{
+    overflow-y:hidden;
+}
+
+/*Table*/
+
+table:not(.dataTable) {
+    width: 100%;
+
+    thead {
+
+        tr {
+
+            th {
+                padding: calc( @gap / 4 ) calc( @gap / 2 );
+                vertical-align: top;
+            }
+
+        }
+
+    }
+
+    tbody {
+
+        tr {
+
+            td, th {
+                padding: calc( @gap / 4 ) calc( @gap / 2 );
+                vertical-align: top;
+            }
+
+            th {
+                /* Vertical tables, in-body-ths */
+                background-color: @g2;
+                border-bottom: 1px solid @g1;
+            }
+
+            &:last-child {
+                th, td {
+                    border-bottom: none;
+                }
+            } 
+
+            td {
+                border-bottom: 1px solid @g2;
+
+                ul {
+                    margin-bottom: 0;
+                    margin-left: calc( @gap / 2 );
+                }
+            }
+
+        }
+
+    }
+}
+
+table {
+    /* e.g. use with <td>TEXT<a></a></td>. Subelements (a,i) will be pulled right and show on hover. */
+    .colWithRightInfoOnHover {
+        &> a, &> i {
+            float: right;
+            opacity: 0;
+        }
+
+        &:hover {
+            &> a, &> i {
+                opacity: 1;
+            }
+        }
+    }
+
+    /* e.g. used for showing, where a certain table value is coming from */
+    em {
+        display: block;
+        font-size: 70%;
+        font-style: normal;
+    }
+}
+
+.dataTables_wrapper.no-footer{
+    table.dataTable{
+        tbody tr td.dt-col-link-col.dropdown{
+            text-align: right;
+        }
+    }
+}
+
+
+/* Textarea */
+
+textarea,
+.form-control{
+    &:focus,
+    &:focus-visible{
+        box-shadow: unset;
+        border-color:rgb(206, 212, 218);
+        outline:unset;
+    }
+}
+
+// /* <a> */
+
+// a:hover{
+//     color:#871010;
+// }
+
+/* Formular inside Modal */
+
+.election_layout_popup{
+    .container{
+        form, .show-as-form{
+            button{
+                &[type="submit"]{
+                    margin-left: auto;
+                    margin-top: 20px;
+                }
+            }
+            .form-group{
+                .checkbox{
+                    label{
+                        cursor: pointer;
+                        display: flex;
+                    }
+                }
+                label{
+                    padding-left: unset;
+                }
+            }
+            fieldset, .show-as-fieldset{
+                // margin-bottom: 10px;
+                // .current_value{
+                //     font-weight: bold;
+                //     width: max-content;
+                //     border-bottom: 2px solid;
+                // }
+                // &.product-attribute-value-wrapper{
+                //     padding-left: calc(@gap / 2);
+                //     legend{
+                //         font-weight: bold;
+                //         font-size: 18px;
+                //     }
+                // }
+            }
+        }
+    }
+}
+
+/* Select inside Modal*/
+
+.election_layout_popup{
+    .form-control{
+        &.compared-locale-select{
+            width:      max-content;
+            margin:     unset;
+            padding:    calc(@gap / 10);
+            margin-top: calc(@gap / 5);
+        }
+    }
+    /* Special fields inside Form*/
+    .form-group{
+        .select2-container--default{
+            .select2-selection--multiple{
+                border-radius: 0px;
+            }
+        }
+        /* Accordion*/
+        #accordion{
+            h3.position-heading{
+                border-radius: 0;
+                margin: 0;
+                background-color: @g4;
+                font-size: 16px;
+                font-weight: 300;
+                color:@g7;
+            }
+            ul{
+                border-radius: 0px;
+                padding-left: @gap;
+                padding-right: @gap;
+                li{
+                    margin-left: unset;
+                    margin-right: unset;
+                    border-radius: 0px;
+                    i.sortable-attr-delete{
+                        &:hover{
+                            color: @c1;
+                        }
+                    }
+                }
+            }
+        }
+
+        ul.sortable-attributes-list{
+            padding-left: unset;
+            li{
+                margin-right: unset;
+                border-radius: 0px;
+            }
+        }
+
+        .btn{
+            &.sortable-attributes-add{
+                max-width: max-content;
+            }
+        }
+    }
+}
+
+/** Tippy Tooltips **/
+div[data-tippy-root]{
+
+    .tippy-content {
+        width: 300px;
+
+        padding: calc(@gap / 2);
+
+        p {
+            padding: 0;
+        }
+    }
+
+    a.help--edit {
+        display: block;
+
+        i {
+            display: inline-block;
+            width: 20px;
+            margin-right: calc(@gap / 2);
+        }
+    }
+    
+    a.help--plain--url, a.help--tooltip--url {
+        i {
+            display: inline-block;
+            width: 20px;
+            margin-right: calc(@gap / 2);
+        }
+    }
+}
+
+.content > .help--plain,
+.content > .container > .row > .col > .help--plain {
+    padding: 10px;
+    background-color: #f6f6f6;
+    border-radius: 3px;
+    margin: 10px 0;
+    position: relative;
+    font-size: 12px;
+    line-height: 12px;
+    width: 100%;
+
+    a.help--edit {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+
+        text-align: right;
+        span {
+            display: none;
+        }
+    }
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+legend + span[data-template] + * {
+    clear: left;
+}
+
+/** Editable title **/
+.editable-title {
+    display: flex;
+    i {
+        margin-top: auto;
+        color: @c1;
+        cursor: pointer;
+    }
+}
+
+.dropdown-menu{
+    min-width: max-content;
+}
+
+
+.theme_documentation {
+    .section {
+        width: 100%;
+        margin-bottom: @gap * 2;
+        
+        .preview {
+            padding: @gap;
+            background: #e7e6e6;
+        }
+    }
+
+    
+    [class*="data-color-"] {
+        display: block;
+        font-style: italic;
+    }
+
+    each(@bsFallbackLoop, {
+        span.data-color-@{key}::after {
+            content: if( isdefined(@bsTheme[@@key]), ~'"' @bsTheme[@@key] ~'"', ~'"'@value ~'"' )
+        }
+    });
+}
+
+
+/* Styling for Header -> Options -> PopUp*/
+.options{
+    .auto_reopening_popup{
+        .auto-popup-menu{
+            border-radius: 0;
+            background: @g1;
+            padding: 0;
+            .popup-col{
+                border:unset;
+                padding: 0;
+                border-bottom: 1px solid #eee;
+                border-collapse: collapse;
+                a{
+                    color: @g7;
+                    padding: calc(20px / 2) calc(20px / 2);
+                    display: block;
+                    &:hover{
+                        color:@c1;
+                    }
+                    /* Specific icon rule for "translationEdit" */
+                    &[data-popup-name="translationEdit"]{
+                        &:before{
+                            content: "\f044";
+                            font-family: 'Font Awesome 6 Free';
+                            font-weight: 900;
+                            margin-right: 8px;
+                        } 
+                    }
+                    /* Specific icon rule for "translationEdit" */
+                }
+            }
+        }
+    }
+}

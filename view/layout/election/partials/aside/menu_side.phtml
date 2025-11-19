@@ -1,0 +1,58 @@
+<?PHP if($this->activeFirstLevelPage && $this->activeFirstLevelPage->hasPages(true)): ?>
+<ul class="menu applications-menu">
+    <?php foreach ($this->activeFirstLevelPage as $secondLevelPage) : ?>
+        <?php if ($this->navigation()->accept($secondLevelPage)) : ?>
+            <li class="<?= $secondLevelPage->isActive(true) ? 'not-collapsed active-menu-item' : 'collapsed' ?>">
+                <span>
+                    <i class="icon <?= $secondLevelPage->getClass() ?>"></i>
+                    <span><?= $this->translate($secondLevelPage->getLabel()); ?></span>
+                    <i class="fas fa-sort-desc"></i>
+                </span>
+
+                    
+                <?PHP if($secondLevelPage->hasPages(true) || !empty($secondLevelPage->getRoute()) ): ?>
+                    <ul>
+                        <?PHP 
+                            $skipOwnLink = false;
+
+                            if(empty($secondLevelPage->getRoute()))
+                                $skipOwnLink = true;
+
+                            $firstLevelRoute = $this->activeFirstLevelPage->getRoute();
+                            if(!empty($firstLevelRoute) && $firstLevelRoute == $secondLevelPage->getRoute())
+                                $skipOwnLink = true;
+
+                            $firstThirdLevelRoute = null;
+                            
+                            if($secondLevelPage->hasPages(true)) {
+                                $secondLevelPage->rewind();
+                                $firstThirdLevelPage = $secondLevelPage->current();
+                                $firstThirdLevelRoute = $firstThirdLevelPage->getRoute();
+                            }
+                            if(!empty($firstThirdLevelRoute) && $firstThirdLevelRoute == $secondLevelPage->getRoute())
+                                $skipOwnLink = true;
+                        ?>
+                        <?PHP if(!$skipOwnLink && $secondLevelPage->getVisible()): ?>
+                            <li class="<?= $secondLevelPage->isActive(true) ? 'active second-level' : 'second-level' ?>">
+                                <a href="<?= $secondLevelPage->getHref(); ?>" title="<?= $this->translate($secondLevelPage->getTitle()); ?>">
+                                    <span><?= $this->translate($secondLevelPage->getLabel()); ?></span>
+                                </a>                        
+                            </li>
+                        <?PHP endif; ?>
+                        <?php foreach ($secondLevelPage as $thirdLevelPage) : ?>
+                            <?PHP if($this->navigation()->accept($thirdLevelPage) && $thirdLevelPage->getVisible()): ?>
+                                <li class="<?= $thirdLevelPage->isActive(true) ? 'active third-level' : 'third-level' ?>">
+                                    <a href="<?= $thirdLevelPage->getHref(); ?>" title="<?= $this->translate($thirdLevelPage->getTitle()); ?>">
+                                        <span><?= $this->translate($thirdLevelPage->getLabel()); ?></span>
+                                    </a>                        
+                                </li>
+                            <?PHP endif; ?>
+                        <?php endforeach ?>
+                    </ul>
+                <?PHP endif; ?>
+            </li>
+        <?php endif; ?>
+    <?php $isCollapsed= true; ?>
+    <?php endforeach; ?>
+</ul>
+<?php endif; ?>

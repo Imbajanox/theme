@@ -1,0 +1,33 @@
+
+<?php
+
+use WirklichDigital\Authentication\Classes\Result;
+
+if (isset($this->authentication_result)) {
+    $loginStatusNotification = '';
+    if ($this->authentication_result) {
+        $loginStatusNotification = $this->translate('Login successful');
+    } else {
+        if($this->real_authentication_result->getCode() == Result::FAILURE_RATE_LIMITED)
+            $loginStatusNotification = $this->translate('Too many attempts in a short time.<br/> Please try again after 60 seconds.');
+        else
+            $loginStatusNotification = $this->translate('Login not successful');
+    }
+    echo sprintf('<h2>%s</h2>', $loginStatusNotification);
+}
+?>
+<?php echo $this->form($this->form); ?>
+
+<?PHP if(count($this->additional_links)): ?>
+<div class="login_additional">
+    <ul>
+    <?PHP foreach($this->additional_links as $link): ?>
+        <li>
+            <a href="<?PHP echo $this->url($link['route'],$link['params']??[],$link['options']??[],$link['reuseMatchedParams']??false); ?>" target="<?PHP echo $link['target'] ?? '_self';?> ">
+                <?PHP echo $this->translate($link['caption']);?>
+            </a>
+        </li>
+    <?PHP endforeach; ?>
+    </ul>
+</div>
+<?PHP endif; ?>

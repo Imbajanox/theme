@@ -1,0 +1,29 @@
+// Alert styling
+// 1.0 - Custom Styling
+
+// .alert {
+// }
+
+// 2.0 - Bootstrap Overwrite
+.alert {
+    --bs-alert-bg: transparent;
+    --bs-alert-padding-x: @gap;
+    --bs-alert-padding-y: @gap;
+    --bs-alert-margin-bottom: @gap;
+    --bs-alert-color: inherit;
+    --bs-alert-border-color: transparent;
+    --bs-alert-border: var(--bs-border-width) solid var(--bs-alert-border-color);
+    --bs-alert-border-radius: var(--bs-border-radius);
+    --bs-alert-link-color: inherit;
+}
+
+// 2.1 - alert Loop
+// 2.1.1 - Normal alert
+each(@bsFallbackLoop, {
+    .alert-@{key} {
+        --bs-alert-color:           .mixDark( if( isdefined(@bsTheme[@@key]), @bsTheme[@@key], @value ) , 40 )[];
+        --bs-alert-bg:              .mixLight( if( isdefined(@bsTheme[@@key]), @bsTheme[@@key], @value ) , 20 )[];
+        --bs-alert-border-color:    .mixLight( if( isdefined(@bsTheme[@@key]), @bsTheme[@@key], @value ) , 40 )[];
+        --bs-alert-link-color:      .mixDark( if( isdefined(@bsTheme[@@key]), @bsTheme[@@key], @value ) , 40 )[];
+    }
+});

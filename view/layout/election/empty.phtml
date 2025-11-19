@@ -1,0 +1,25 @@
+<?= $this->doctype() ?>
+<?= $this->htmlTag(['lang' => $this->locale()])->openTag() ?>
+    <head>
+        <meta charset="utf-8">
+        <?= $this->headTitle(); ?>
+        <?= $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1.0')->appendHttpEquiv('X-UA-Compatible', 'IE=edge'); ?>
+
+        <?PHP 
+            if($_COOKIE['darkmode'] ?? false)
+                echo $this->headLink()->prependStylesheet($this->basePath('assets/election-main-dark.css'));
+            else
+                echo $this->headLink()->prependStylesheet($this->basePath('assets/election-main.css'));
+        ?>
+
+        <?PHP 
+            echo $this->headScript()
+                ->prependFile($this->basePath('assets/election-head.js'));
+        ?>
+    </head>
+
+    <body class="election_layout_empty" <?= ($_COOKIE['darkmode'] ?? false) ? 'data-bs-theme="dark"' : '' ; ?>>
+        <?= $this->content; ?>
+        <?= $this->inlineScript()->appendFile($this->basePath('assets/election-main.js')); ?>
+    </body>
+</html>

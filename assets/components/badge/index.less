@@ -1,0 +1,28 @@
+// Badge styling
+// 1.0 - Custom Styling
+
+.badge {
+    + .badge {
+        margin-left: @gap ./ 2;
+    }
+}
+
+// 2.0 - Bootstrap Overwrite
+.badge {
+    --bs-badge-padding-x: calc(@gap * 0.5);
+    --bs-badge-padding-y: calc(@gap * 0.25);
+    --bs-badge-font-size: calc(@copyfontSize * 0.75);
+    --bs-badge-font-weight: 400;
+    --bs-badge-color: #fff;
+    --bs-badge-border-radius: var(--bs-border-radius);
+}
+
+// 2.1 - Badge Loop
+// 2.1.1 - Normal Badge
+each(@bsFallbackLoop, {
+    .badge.bg-@{key} {
+        --bs-bg-opacity: 1;
+        background-color: rgba(var(~'--bs-@{key}-rgb'),var(--bs-bg-opacity))!important;
+        color: .luma( if( isdefined(@bsTheme[@@key]), @bsTheme[@@key], @value ) )[];
+    }
+});

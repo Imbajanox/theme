@@ -1,0 +1,255 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-09-24 11:30+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/layout/election/partials/header/search.phtml:2
+msgid "Search (Open with ALT+S)"
+msgstr "Suchen (Öffnen mit ALT+S)"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/layout/election/partials/aside/menu_top.phtml:2
+msgid "Applications"
+msgstr "Anwendungen"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/layout/election/partials/aside/menu_profile.phtml:16
+msgid "Logout"
+msgstr "Ausloggen"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/get-entry.phtml:4
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/exceptions.phtml:32
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/access-log/log/access-log.phtml:26
+msgid "Details"
+msgstr "Details"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/get-entry.phtml:10
+msgid "Property"
+msgstr "Eigenschaft"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/get-entry.phtml:11
+msgid "Value"
+msgstr "Wert"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/get-entry.phtml:14
+msgid "id"
+msgstr "id"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/get-entry.phtml:18
+msgid "timestamp"
+msgstr "Zeit"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/get-entry.phtml:19
+msgid "No Date found"
+msgstr "Kein Datum gefunden"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/get-entry.phtml:22
+msgid "level"
+msgstr "Level"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/get-entry.phtml:26
+msgid "message"
+msgstr "Nachricht"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/get-entry.phtml:30
+msgid "component"
+msgstr "Komponente"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/browser.phtml:4
+msgid "Browser / JS Errors"
+msgstr "Browser / JS Fehler"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/application.phtml:2
+msgid "Exception Log"
+msgstr "Fehlermeldungen"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/exceptions.phtml:4
+msgid "Exceptions"
+msgstr "Fehlermeldungen"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/exceptions.phtml:11
+msgid "Empty log file"
+msgstr "Log Datei leer"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/exceptions.phtml:19
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/access-log/log/access-log.phtml:10
+msgid "Timestamp"
+msgstr "Zeit"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/exceptions.phtml:20
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/access-log/log/access-log.phtml:11
+msgid "Level"
+msgstr "Level"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/exceptions.phtml:21
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/access-log/log/access-log.phtml:12
+msgid "Message"
+msgstr "Nachricht"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/exception-logger-frontend/log/exceptions.phtml:22
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/access-log/log/access-log.phtml:14
+msgid "Extra-Data"
+msgstr "Extra Daten"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/admin-base/popup/close-popup.phtml:37
+msgid "You are being redirected to a page outside of this system"
+msgstr "Sie werden auf eine Seite außerhalb dieses Systems weitergeleitet"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/admin-base/popup/close-popup.phtml:38
+msgid ""
+"If you are not redirected in 3 seconds, you can follow this link:<br><a "
+"href=\"{{url}}\">{{url}}</a>"
+msgstr ""
+"Wenn Sie nicht innerhalb von 3 Sekunden weitergeleitet werden, können Sie diesem"
+" Link folgen:<br> <a href=\"{{url}}\">{{url}}</a>"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/admin-base/popup/close-popup.phtml:41
+msgid "Close window"
+msgstr "Fenster schließen"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/user-profile-page/profile/change-system-locale.phtml:11
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/user-profile-page/profile/index.phtml:42
+#, php-format
+msgid "Change to %s"
+msgstr "Zu %s wechseln"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/user-profile-page/profile/rename-user.phtml:5
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/user-profile-page/profile/index.phtml:25
+msgid "Change Name"
+msgstr "Namen ändern"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/user-profile-page/profile/change-password.phtml:5
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/user-profile-page/profile/index.phtml:30
+msgid "Change Password"
+msgstr "Kennwort ändern"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/user-profile-page/profile/index.phtml:12
+msgid "Profile page"
+msgstr "Benutzerprofil"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/user-profile-page/profile/index.phtml:23
+msgid "Name"
+msgstr "Name"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/user-profile-page/profile/index.phtml:28
+msgid "Password"
+msgstr "Passwort"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/user-profile-page/profile/index.phtml:33
+msgid "System locale"
+msgstr "Systemsprache"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/user-profile-page/profile/index.phtml:50
+msgid "UI color"
+msgstr "Oberflächen-Design"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/user-profile-page/profile/index.phtml:53
+msgid "Dark"
+msgstr "Dunkel"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/user-profile-page/profile/index.phtml:55
+msgid "Light"
+msgstr "Hell"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/user-profile-page/profile/index.phtml:59
+msgid "Toggle"
+msgstr "Umschalten"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/access-log/log/access-log.phtml:4
+msgid "Access Log"
+msgstr "Access Log"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/access-log/log/access-log.phtml:13
+msgid "URL"
+msgstr "URL"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/admin-user-management/user/update.phtml:4
+msgid "Update User"
+msgstr "Benutzer bearbeiten"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/admin-user-management/user/delete-confirm.phtml:4
+msgid "Really delete this user?"
+msgstr "Diesen Benutzer wirklich löschen?"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/admin-user-management/user/delete-confirm.phtml:7
+msgid ""
+"You are about to delete the user with id \"{{userId}}\". Any relation to this user"
+" will be lost upon deletion."
+msgstr ""
+"Sie sind dabei, den Benutzer mit der ID „{{userId}}“ zu löschen. Beim Löschen "
+"geht jeglicher Bezug zu diesem Benutzer verloren."
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/admin-user-management/user/delete-confirm.phtml:11
+msgid "Delete"
+msgstr "Löschen"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/admin-user-management/user/create.phtml:4
+msgid "Create User"
+msgstr "Benutzer erstellen"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/authentication/login/login.phtml:9
+msgid "Login successful"
+msgstr "Anmeldung erfolgreich"
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/authentication/login/login.phtml:12
+msgid "Too many attempts in a short time.<br/> Please try again after 60 seconds."
+msgstr ""
+"Zu viele Versuche in kurzer Zeit.<br/> Bitte versuchen Sie es nach 60 Sekunden "
+"erneut."
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/wirklich-digital/authentication/login/login.phtml:14
+msgid "Login not successful"
+msgstr "Anmeldung nicht erfolgreich"
+
+#: vendor/wirklich-digital/election-theme/assets/components/datatables/index.js:46
+msgid "Dynamic data"
+msgstr "Dynamische Daten"
+
+#: vendor/wirklich-digital/election-theme/assets/components/datatables/index.js:64
+#, javascript-format
+msgid "Table for %s"
+msgstr "Tabelle für %s"
+
+#: vendor/wirklich-digital/election-theme/assets/components/datatables/index.js:69
+msgid "Table"
+msgstr "Tabelle"
+
+#: vendor/wirklich-digital/election-theme/assets/components/global-loader/index.js:131
+msgid "Currently, we are loading these elements:"
+msgstr "Derzeit laden wir diese Elemente:"
+
+#: vendor/wirklich-digital/election-theme/assets/components/global-loader/index.js:189
+msgid "Immediate page content"
+msgstr "Sofortiger Seiteninhalt"
+
+#: vendor/wirklich-digital/election-theme/assets/components/modal/index.js:5
+msgid "Close"
+msgstr "Schließen"
+
+#: vendor/wirklich-digital/election-theme/assets/components/modal/index.js:5
+msgid "Confirm"
+msgstr "Bestätigen"
+
+#~ msgid "Please wait..."
+#~ msgstr "Bitte warten..."
+
+#~ msgid "Global search"
+#~ msgstr "Globale Suche"
+
+#~ msgid "Use this tool to search for (nearly) any information existing in the system."
+#~ msgstr ""
+#~ "Mit diesem Tool können Sie nach (fast) allen im System vorhandenen Informationen"
+#~ " suchen."
+
+#~ msgid "Find..."
+#~ msgstr "Finden..."
+
+#: /var/www/html/vendor/wirklich-digital/election-theme/view/layout/election/partials/aside/menu_profile.phtml:11
+msgid "Hide menu"
+msgstr "Menü ausblenden"

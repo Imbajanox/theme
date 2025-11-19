@@ -1,0 +1,16 @@
+<div class="cr">
+    <h1><?= $this->translate('Exception Log'); ?></h1>
+    <?= $this->datatable($this->datatable); ?>
+</div>
+<script>
+    window.wirklichDigitalDataTableCurrentConfig = {
+        processing: true,
+        serverSide: true,
+        ajax: <?= json_encode($this->url('logger-frontend/logs/application/list-ajax')) ?>,
+        order: [
+            [0, 'asc']
+        ],
+        columnDefs: <?= $this->datatableColumnDefinition($this->datatable, []); ?>,
+        language: <?= $this->datatableLanguageDefinition(); ?>,
+    };
+</script>

@@ -1,0 +1,116 @@
+.medien-lightbox{
+    width:100%;
+    background-color: @g1;
+    padding:@gap;
+    padding-bottom: 0;
+    #gallery-container{
+        position: relative;
+        padding:@gap 0px;
+        padding-top: 0;
+        padding-bottom: 0;
+        width:100%;
+        margin:0 auto;
+        .item{
+            border:1px solid #d9d9d9;
+            //width: calc(100% / 6);
+            width:calc(25% - 15px);
+            margin-top: calc(@gap / 2);
+            margin-bottom: calc(@gap / 2);
+            background-color: @g1;
+            padding: 0;
+
+            .media-select-wrapper {
+                position: absolute;
+                top: 3px;
+                left: 3px;
+            }
+
+            .item-type {
+                position: absolute;
+                top: 3px;
+                right: 3px;
+                text-align: right;
+                padding: 3px 5px;
+                background-color: rgba(0,0,0,0.4);
+                color: @g1;
+                text-transform: uppercase;
+                font-size: 10px;
+            }
+
+            .info {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+                width: 100%;
+                height: auto;
+                max-height: 30%;
+                background-color: rgba(0,0,0,0.4);
+                color: #FFF;
+
+                a {
+                    color: #FFF;
+                    font-weight: bold;
+                    padding: 5px;
+                }
+
+                .sub {
+                    width: 100%;
+                    text-align: left;
+                    font-size: 12px;
+                    padding: 3px 5px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    
+                    .badge {
+                        --bs-badge-padding-x: 4px;
+                        --bs-badge-padding-y: 2px;
+                        --bs-badge-font-size: 0.75em;
+                        --bs-bg-opacity: 1;
+
+                        background-color: @c1;
+                        color: @g1;
+
+                        & +.badge {
+                            margin-left: 1px;
+                        }
+                    }
+                }
+            }
+            
+            a{
+                &.thumbnail{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    margin: 0;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    max-width: 100%;
+                    max-height: 100%;
+                    object-fit: contain;
+                    padding: @gap;
+                }
+            }
+        }
+    }
+}
+
+
+#lightboxsearchform fieldset{
+    display: flex;
+    .form-group{
+        width: 100%; 
+        margin-right: @gap;
+        &:last-child{
+            margin-right: 0px;
+        }
+    }
+}

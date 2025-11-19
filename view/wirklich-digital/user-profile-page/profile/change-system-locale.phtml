@@ -1,0 +1,13 @@
+<?php
+
+use WirklichDigital\GlobalAvailableConfig\GlobalAvailableConfig;
+
+foreach ($this->availableLocales as $localeKey => $locale): ?>
+    <?php if ($locale !== $this->currentLocale) :
+        $options = GlobalAvailableConfig::get()['wirklich-digital']['user-profile-page']['system-locale-options'][$locale] ?? null;
+        $localeName = $options['name'] ?? $localeKey;
+        $icon = $options['icon'] ?? null ? sprintf('<i class="%s"></i>', $options['icon']) : '';
+    ?>
+    <a href="<?= $this->url(null, ['locale' => $locale], ['query' => ['changedLanguage' => $locale]], true); ?>"><?= sprintf($this->translate('Change to %s'), $localeName) . " " . $icon; ?> </a>
+    <?php endif; ?>
+<?php endforeach; ?>

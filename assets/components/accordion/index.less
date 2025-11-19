@@ -1,0 +1,110 @@
+.widget-container{
+    background: @g1;
+    width: 100%;
+    margin-top: @gap;
+    padding: calc(@gap / 2);
+    height: max-content;
+
+    .j77-accordion + .j77-accordion {
+        margin-top: calc(@gap / 2);
+    }
+
+    section {
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        background-color: @g2;
+
+        h4{
+            flex: 1;
+            padding-left: calc(@gap / 2);
+            margin-bottom: 0;
+            cursor: pointer;
+            font-size: @titlefontSize;
+
+            i{
+                margin-right: 5px;
+                margin-top: -25px;
+            }
+        }
+
+        .widget-container-inline-menu {
+            display: flex;
+            align-items: center;
+
+            .widget-container-inline-menu-icons {
+                
+                ul {
+                    display: flex;
+                    align-items: center;
+                    margin: 0;
+
+                    li {
+                        
+                        a {
+                            font-size: 100%;
+                            padding: calc(20px/2) calc(20px/2 + 4px) calc(20px/2) calc(20px/2 + 4px);
+
+                            &:hover {
+                                background-color: rgba(0,0,0,0.1);
+                            }
+
+                            i {
+                                color: @g7;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .widget-container-inline-menu-dropdown {
+
+                button {
+                    &:hover {
+                        background-color: rgba(0,0,0,0.1);
+                    }
+                }
+
+                .dropdown-menu {
+                    padding: 0;
+    
+                    li {
+                        padding: calc(@gap / 4) calc(@gap / 2);
+                        border-bottom: 1px solid @g2;
+    
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                    }
+                }
+
+            }
+            
+        }
+    }
+
+    .widget-container-content{
+        background: @g1;
+        padding: 0;
+
+        section {
+            min-height: 20px;
+            background-color: @g1;
+            border-bottom: 1px solid #666;
+    
+            h4{
+                font-size: 100%;
+            }
+        }
+    }
+
+    &.bg-dark .widget-container-content {
+        background-color: transparent;
+        color: @g1;
+    }
+
+    section + .widget-container-content {
+        padding-top: calc(@gap / 2);
+    }
+}
+

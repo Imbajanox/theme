@@ -1,0 +1,13 @@
+<ul class="menu applications">
+    <li class="not-collapsed"><span><i class="icon fas fa-bars"> </i><span><?= $this->translate('Applications'); ?></span><i></i></span>
+        <ul>
+            <?php
+                $this->navigation($this->navigationContainer)
+                    ->menu()
+                    ->setPartial('layout/election/partials/aside/menu_top_menuItem');
+                echo $this->navigation()->menu()->render();
+            ?>
+        </ul>
+    </li>
+</ul>
+<hr>

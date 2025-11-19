@@ -1,0 +1,16 @@
+// Color styling
+// 1.0 - Custom Styling
+
+// .text-bg {
+
+// }
+
+// 2.0 - Bootstrap Overwrite
+// 2.1 - Color loops
+// 2.1.1 - Text bg
+each(@bsFallbackLoop, {
+    .text-bg-@{key} {
+        color: .luma( if( isdefined(@bsTheme[@@key]), @bsTheme[@@key], @value ) )[] !important;
+        background-color: rgba( .rgb( if( isdefined(@bsTheme[@@key]), @bsTheme[@@key], @value ) )[] ,var(--bs-bg-opacity,1))!important;
+    }
+});

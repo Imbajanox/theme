@@ -1,0 +1,19 @@
+<div class="profile">
+    <?php
+        $this->navigation($this->navigationContainer)
+            ->menu()
+            ->setPartial('layout/election/partials/aside/menu_profile_item');
+        echo $this->navigation()->menu()->render();
+    ?>
+    <?PHP if($this->themeSideMenuConfig['collapsible'] ?? true): ?>
+    <a href="javascript:void(0);" class="profileBtn toggle-menu prevent-hover-effect" id="hideMenu">
+        <i class="icon fas fa-arrow-left"></i>
+        <span><?= $this->translate('Hide menu'); ?></span>
+    </a>
+    <?PHP endif; ?>
+    <a href="<?= $this->url('authentication/logout'); ?>" class="profileBtn prevent-hover-effect">
+        <i class="icon fas fa-sign-out-alt"></i>
+        <span><?= $this->translate('Logout'); ?></span> <span>(<?= $this->username; ?>)</span>
+    </a>
+</div>
+

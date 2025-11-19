@@ -1,0 +1,35 @@
+/*
+ * NOT IN USE!
+**/
+
+.dropdown {
+    position: relative;
+
+    a {
+        color: @g7;
+
+        &:hover {
+            color: @c1;
+        }
+    }
+
+    ul.dropdown-menu {
+        padding: 0;
+        min-width: max-content;
+
+        li {
+            padding: 0 calc( @gap / 2 );
+            border-bottom: 1px solid #EEE;
+            text-align: left;
+
+            &:last-child {
+                border-bottom: none;
+            }
+
+            i {
+                min-width: 20px;
+            }
+        }
+
+    }
+}

@@ -1,0 +1,8 @@
+<?php foreach ($this->container as $item) : ?>
+    <?php if ($this->navigation()->accept($item) && $item->get('profile_menu')) : ?>
+        <a href="<?= $item->getHref(); ?>" class="profileBtn <?= $item->isActive(true) ? 'active' : '' ?>" title="<?= $this->translate($item->getTitle()); ?>">
+            <i class="<?= $item->getClass() ?>"></i>
+            <span><?= $this->translate($item->getLabel()); ?></span>
+        </a>
+    <?php endif; ?>
+<?php endforeach ?>

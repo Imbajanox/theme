@@ -1,0 +1,82 @@
+// TODO
+@media (min-width: 1400px){
+    .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 100%;
+    }
+}
+
+.dashboard{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: @gap;
+    .dashboard-items{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        gap:@gap;
+        @media @query[xs]{
+            flex-direction: column;
+        }
+        a.dashboard--item{
+            height: calc(@gap*5);
+            color: @g7;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            width: calc(25% - 15px);
+            /*&:nth-of-type(4n){
+                margin-right: 0px;
+            }*/
+            &:hover{
+                .shadow();
+            }
+            @media @query[xs]{
+                width: 100%;
+                flex: 0;
+                margin-right: 0px;
+            }
+            i.icon{
+                background-color: @c1;
+                width: 33.33%;
+                color: @g1;
+                position: relative;
+                height: 100%;
+                display: flex;
+                font-size: calc(@gap*1.5);
+                min-width: calc(@gap*2);
+                justify-content: center;
+                align-items: center;
+                @media @query[xs]{
+                    width: 25%;
+                }
+            }
+            .dashboard--context{
+                padding: @gap;
+                background-color: @g1;
+                width: 100%;
+                height: 100%;
+                p{
+                    font-family: @titlefont;
+                    display: block;
+                    width: 100%;
+                    line-height: 130%;
+                    font-weight: bold;
+
+                    span{
+                        font-family: @copyfont;
+                        display: block;
+                        font-weight: normal;
+                        width: 100%;
+                        margin-top: calc(@gap/2);
+                        @media @query[xs]{
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    
+}

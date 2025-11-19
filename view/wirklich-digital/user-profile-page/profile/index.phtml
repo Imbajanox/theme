@@ -1,0 +1,89 @@
+<?php
+
+use WirklichDigital\GlobalAvailableConfig\GlobalAvailableConfig;
+
+$options = GlobalAvailableConfig::get()['wirklich-digital']['user-profile-page']['system-locale-options'][$this->currentSystemLocale] ?? null;
+$localeName = $options['name'] ?? $this->currentSystemLocale;
+$icon = $options['icon'] ?? null ? sprintf('<i class="%s"></i>', $options['icon']) : '';
+?>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1><?= $this->translate("Profile page"); ?></h1>
+        </div>
+    </div>
+
+    <div class="col-md-6 col-12">
+        <div class="widget-container">
+            <div class="widget-container-operations">
+            </div>
+            <div class="widget-container-content">
+                <table>
+                    <tr class="username">
+                        <th><?= $this->translate("Name"); ?></th>
+                        <td><?= $this->name; ?></td>
+                        <td><a class="fb_auto_small" href="<?= $this->url('profile-page/rename-user', [], ['query' => ['layout' => 'popup']]);?>"><?= $this->translate("Change Name")?></a></td>
+                    </tr>
+                    <tr class="password">
+                        <th><?= $this->translate("Password"); ?></th>
+                        <td>******</td>
+                        <td><a class="fb_auto_small" href="<?= $this->url('profile-page/change-password', [], ['query' => ['layout' => 'popup']]);?>"><?= $this->translate("Change Password")?></a></td>
+                    </tr>
+                    <tr class="systemLocale">
+                        <th><?= $this->translate("System locale"); ?></th>
+                        <td><?= $localeName . " " . $icon; ?></td>
+                        <td>
+                            <select id="choose_system_language" onchange="changeSystemLanguage(this.value)">
+                                <?php foreach ($this->availableLocales as $localeKey => $locale): 
+                                        $isCurrentLang = $locale == $this->currentSystemLocale;
+                                        $options = GlobalAvailableConfig::get()['wirklich-digital']['user-profile-page']['system-locale-options'][$locale] ?? null;
+                                        $localeName = $options['name'] ?? $localeKey;
+                                        $icon = $options['icon'] ?? null ? sprintf('<i class="%s"></i>', $options['icon']) : '';
+                                        $lable = ! $isCurrentLang ? (sprintf($this->translate('Change to %s'), $localeName) . " " . $icon) : $localeName . " " . $icon; 
+                                    ?>
+                                    <option selected="<?= $isCurrentLang; ?>" value="<?= $locale; ?>"><?= $lable; ?></p></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr class="uiColor">
+                        <th><?= $this->translate("UI color"); ?></th>
+                        <td>
+                            <?PHP if($_COOKIE['darkmode'] ?? false): ?>
+                                <?= $this->translate("Dark"); ?>
+                            <?PHP else: ?>
+                                <?= $this->translate("Light"); ?>
+                            <?PHP endif; ?>
+                        </td>
+                        <td>
+                            <a href="javascript:void(0);" id="uiColorToggle"><?= $this->translate("Toggle")?></a>
+                        </td>
+                    </tr>
+                    <?= $this->additional_user_profile_settings; ?>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var changeSystemLanguage = function(e) {
+        let url = "<?= $this->url(null, [], ['query' => ['changedLanguage' => '$locale']], true); ?>";
+        url = url.replace("$locale", e);
+        window.location = url;
+    }
+
+    jQuery(function() {
+        jQuery('#choose_system_language').val('<?= $this->currentSystemLocale; ?>');
+        jQuery('#uiColorToggle').on('click',function(e){
+            e.preventDefault();
+            <?PHP if($_COOKIE['darkmode'] ?? false): ?>
+                document.cookie = "darkmode=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            <?PHP else: ?>
+                document.cookie = "darkmode=true; expires=Tue, Jan 01 2999 01:00:00 UTC; path=/;";
+            <?PHP endif; ?>
+            window.location.reload();
+        });
+    });
+
+</script>

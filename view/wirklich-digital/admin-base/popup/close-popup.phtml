@@ -1,0 +1,41 @@
+<script>
+    var hash = <?= json_encode($this->gotoHash ?? ''); ?>;
+    var redirect = <?= json_encode($this->redirect ?? '') ?>;
+    var useSafeRedirect = <?= json_encode($this->useSafeRedirect ?? '') ?>;
+    var reload = <?= json_encode(! ! $this->shouldRefresh) ?>;
+    var redirectIfNoFrame = <?= json_encode($this->redirectNoFrame ?? '') ?>;
+    var forceDisableRedirect = <?= json_encode($this->forceDisableRedirect ?? false) ?>;
+
+    if(hash){
+        parent.window.location.hash = hash;
+    }
+    if(redirect && !forceDisableRedirect){
+        if(useSafeRedirect){
+            $(function(){
+                // set timeout after document is loaded
+                window.setTimeout(function(){
+                    parent.window.location.href = redirect;
+                }, 3000);
+            });
+        } else {
+            parent.window.location.href = redirect;
+        }
+    } else if(reload || ( redirect && forceDisableRedirect )){
+        if(window.self != window.parent){
+            parent.window.location.reload(true);
+        } else if(redirectIfNoFrame) {
+            window.location.href = redirectIfNoFrame;
+        }
+    }
+    if(!redirect){
+        parent.jQuery('.modal.active').trigger("closePopupPage");
+        parent.jQuery('.modal.active').detach();
+    }
+</script>
+
+<?php if (! empty($this->redirect) && $this->useSafeRedirect) : ?>
+<h1><?= $this->translate('You are being redirected to a page outside of this system') ?></h1>
+<p><?= $this->mustache($this->translate('If you are not redirected in 3 seconds, you can follow this link:<br><a href="{{url}}">{{url}}</a>'), ['url' => $this->redirect]) ?></p>
+<?php endif; ?>
+
+<a href="javascript:parent.jQuery('.modal.active').detach();"><?= $this->translate('Close window'); ?></a>

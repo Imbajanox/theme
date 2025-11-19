@@ -1,0 +1,81 @@
+{
+    "name": "wirklich-digital/election-theme",
+    "description": "ElectionTheme",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Wirklich Digital",
+            "email": "info@wirklich.digital"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "WirklichDigital\\ElectionTheme\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WirklichDigital\\ElectionThemeTest\\": "test/"
+        }
+    },
+    "extra": {
+        "laminas": {
+            "module": "WirklichDigital\\ElectionTheme"
+        }
+    },
+    "require": {
+        "php": "^7.2 || ~8.0 || ~8.1",
+        "assetic/framework": "^2.0.2 || ^3.0",
+        "laminas/laminas-authentication": "^2.12.0",
+        "laminas/laminas-eventmanager": "^3.5.0",
+        "laminas/laminas-modulemanager": "^2.8",
+        "laminas/laminas-mvc": "^3.3.5",
+        "laminas/laminas-router": "^3.9.0",
+        "laminas/laminas-servicemanager": "^3.17.0",
+        "laminas/laminas-view": "^2.23.0",
+        "psr/container": "^1.1.2",
+        "wirklich-digital/admin-base": "^2.0",
+        "wirklich-digital/admin-base-assets": "^2.1",
+        "wirklich-digital/asset-bootstrap5": "^5.3",
+        "wirklich-digital/asset-fontawesome": "^6.4",
+        "wirklich-digital/asset-hotkeys": "^1.0",
+        "wirklich-digital/asset-jquery": "^3.7",
+        "wirklich-digital/asset-jquery-ui": "^1.1",
+        "wirklich-digital/asset-js-cookie": "^1.0",
+        "wirklich-digital/asset-masonry": "^4.2",
+        "wirklich-digital/asset-popper": "^2.11",
+        "wirklich-digital/asset-select2": "^4.0",
+        "wirklich-digital/asset-spectrum": "1.0",
+        "wirklich-digital/asset-tippy": "^6.3",
+        "wirklich-digital/authentication": "^2.0",
+        "wirklich-digital/auto-popup": "^1.1",
+        "wirklich-digital/data-tables": "^2.2",
+        "wirklich-digital/entity-translation": "^4.0",
+        "wirklich-digital/flag-icons": "^1.0",
+        "wirklich-digital/fontawesome-icon-picker-form-element": "^1.0",
+        "wirklich-digital/mustache": "^1.0",
+        "wirklich-digital/system-options": "^1.1.0",
+        "wirklich-digital/system-translation": "^3.0",
+        "wirklich-digital/system-translation-js": "^1.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.3",
+        "phpunit/phpunit": "^7.0"
+    },
+    "scripts": {
+        "check": [
+            "@cs-check",
+            "@test"
+        ],
+        "cs-check": "phpcs",
+        "cs-fix": "phpcbf",
+        "test": "phpunit --colors=always",
+        "test-coverage": "phpunit --colors=always --coverage-clover clover.xml"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://h17.jarmedia.de/satis/packages"
+        }
+    ]
+}

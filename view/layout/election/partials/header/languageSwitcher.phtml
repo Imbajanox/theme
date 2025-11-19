@@ -1,0 +1,14 @@
+<?php
+use WirklichDigital\EntityTranslation\Service\EntityLocaleService;
+
+?>
+
+<div class="language">
+    <button type="button" class="switcherBtn"><i class="fas fa-globe"></i></button>
+    <ul>
+        <?php foreach ($this->languages as $language) : ?>
+            <a class="<?= $this->currentLanguage == $language->getLocale() ? 'active' : ''?>" href="<?= $this->url(null, [EntityLocaleService::ENTITY_LOCALE_ROUTE_PARAMETER => $language->getLocale()], [], true); ?>"><i class="<?= $language->getIconClass()?>"></i></a>
+        <?php endforeach; ?>
+    </ul>
+</div>
+

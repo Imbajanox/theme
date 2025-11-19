@@ -1,0 +1,97 @@
+
+header .global-search{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    height: calc(75vh - @gap*4 - 1px);
+    position:relative;
+    background-color: @g1;
+    i.icon{
+        color: @g7;
+    }
+    form{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        align-items: center;
+        padding: @gap 0px;
+        background-color: @g2;
+        input{
+            position:relative;
+            height: calc(@gap*2 - 10px);
+            width: calc(100% - @gap*6 - 2px);
+            border: none;
+            padding: 0px calc(@gap/2);
+            background-color: @g1;
+            border-bottom: 1px solid @g2;
+        }
+    }
+    button{
+        color: @g7;
+        &[data-button="clear"]{
+            display: none;
+        }
+    }
+    .preSearchInput {
+        width: 40px;
+        .spinner {
+            display: none;
+        }
+    }
+    .search-results{
+        background-color: @g1;
+        display: none;           
+        width: 100%;
+        overflow-y: auto;            
+        margin: 0 auto;
+
+        &.visible{
+            display: block;
+        }
+
+        li{
+            display: flex;
+            width: 100%;
+            border-bottom: 1px solid @g4;
+            padding: 0px calc(@gap/2);
+            &:hover{
+                background-color: @g2;
+            }                
+            &:last-child{
+                border: none;                    
+            }
+            > a, > span{
+                padding: calc(@gap/2) 0px;
+                color: @g7;
+                display: block;
+                width: 100%;
+                span{
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+
+        .empty-result {
+            li {
+                text-align: center;
+                background-color: @g7;
+                cursor: normal;
+
+                &:hover{
+                    background-color: @g7;
+                }
+                
+                span {
+                    color: @g1;
+                }
+            }
+        }
+    }
+}

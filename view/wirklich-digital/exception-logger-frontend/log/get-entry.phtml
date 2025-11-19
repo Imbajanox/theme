@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1><?= $this->translate("Details"); ?></h1>
+        </div>
+    </div>
+    <div>
+        <table class="table">
+            <tr>
+                <th><?= $this->translate('Property'); ?></th>
+                <th><?= $this->translate('Value'); ?></th>
+            </tr>
+            <tr>
+                <td><?= $this->translate('id'); ?></td>
+                <td><?= $this->exception->getId(); ?></td>
+            </tr>
+            <tr>
+                <td><?= $this->translate('timestamp'); ?></td>
+                <td><?= $this->exception->getCreatedAt() ? $this->exception->getCreatedAt()->format('Y-m-d H:i') : $this->translate("No Date found"); ?></td>
+            </tr>
+            <tr>
+                <td><?= $this->translate('level'); ?></td>
+                <td><?= $this->exception->getPriority(); ?></td>
+            </tr>
+            <tr>
+                <td><?= $this->translate('message'); ?></td>
+                <td><?= $this->exception->getMessage(); ?></td>
+            </tr>
+            <tr>
+                <td><?= $this->translate('component'); ?></td>
+                <td><?= $this->exception->getComponent(); ?></td>
+            </tr>
+        </table>
+    </div>
+    <pre><?PHP print_r($this->exception->getExtra()); ?></pre>
+</div>

@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1><?= $this->translate("Browser / JS Errors"); ?></h1>
+        </div>
+    </div>
+    <?= $this->datatable($this->datatable); ?>
+</div>
+<script>
+    window.wirklichDigitalDataTableCurrentConfig = {
+        processing: true,
+        serverSide: true,
+        ajax: <?= json_encode($this->url('logger-frontend/logs/browser/list-ajax')) ?>,
+        order: [
+            [0, 'asc']
+        ],
+        columnDefs: <?= $this->datatableColumnDefinition($this->datatable, []); ?>,
+        language: <?= $this->datatableLanguageDefinition(); ?>,
+    };
+</script>

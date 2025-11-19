@@ -1,0 +1,54 @@
+.ui-dialog {
+    border-radius: 0;
+
+    .ui-dialog-titlebar {
+        background-color: @g2;
+        border-radius: 0;
+        border: none;
+        font-size: @titlefontSize;
+        font-weight: inherit;
+        padding-left:  calc( @gap / 2 );
+
+        .ui-dialog-titlebar-close {
+            margin-top: -13px;
+            right: calc( @gap / 2 );
+
+            &::before {
+                content: "\f00d";
+                font-family: 'Font Awesome 6 Free';
+                font-weight: 900;
+                font-size: 20px;
+                color: @g7;
+            }
+        }
+    }
+
+    .ui-dialog-buttonpane {
+        button {
+            background-color: @g4;
+
+            &:hover {
+                background-color: @g6;
+            }
+        }
+
+        button:first-of-type {
+            background-color: @c1;
+
+            &:hover {
+                background-color: @c1;
+                opacity: .9;
+            }
+        }
+    }
+}
+
+.sortableContainer {
+    .ui-sortable li {
+        border-radius: 0;
+    }
+
+    .ui-sortable li > i:first-child {
+        margin-right: 10px;
+    }
+}

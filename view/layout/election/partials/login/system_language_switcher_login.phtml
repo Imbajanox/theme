@@ -1,0 +1,36 @@
+<?php
+use WirklichDigital\FlagIcons\Helper\FlagIconHelper;
+
+$currentLanguageShortcode = null;
+$currentLanguageIsoCode = null;
+$currentLanguageFlagIcon = null;
+$otherLanguages = [];
+
+foreach($this->languages as $shortcode => $iso_code)
+{
+    if($this->currentLanguage == $iso_code)
+    {
+        $currentLanguageShortcode = $shortcode;
+        $currentLanguageIsoCode = $iso_code;
+        $currentLanguageFlagIcon = FlagIconHelper::getFlagIconFromLocale($iso_code);
+    }
+    else
+        $otherLanguages[$shortcode] = $iso_code;
+}
+
+?>
+
+<div class="dropdown dropdown-language-switch-flags">
+    <button type="button" data-bs-toggle="dropdown">
+        <i class="flag-icon <?= $currentLanguageFlagIcon; ?>"></i>
+    </button>
+    <ul class="dropdown-menu">
+        <?php foreach($otherLanguages as $shortcode => $iso_code):
+            $flag_icon = FlagIconHelper::getFlagIconFromLocale($iso_code);
+            ?>
+            <li title="<?= $shortcode ?>">
+                <a class="dropdown-item change-language-link" title="<?= $shortcode ?>" href="<?= $this->url(null, ['locale' => $iso_code], [], true); ?>"><i class="flag-icon <?= $flag_icon; ?>"></i></a>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>

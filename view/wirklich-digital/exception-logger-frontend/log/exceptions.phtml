@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h1><?= $this->translate("Exceptions"); ?></h1>
+        </div>
+    </div>
+    <ul class="menu_inner">
+        <?php if ($this->isAllowedRoute('logger-frontend/empty-exceptions')) : ?>
+            <li>
+                <a href="<?= $this->url('logger-frontend/empty-exceptions', []) ?>">
+                    <?= $this->translate('Empty log file') ?>
+                </a>
+            </li>
+        <?php endif; ?>
+    </ul>
+    <table class="dataTable" data-config-key="exceptionList" data-no-global-search="1">
+        <thead>
+            <tr class="filter_row">
+                <th><?= $this->translate('Timestamp'); ?></th>
+                <th><?= $this->translate('Level'); ?></th>
+                <th><?= $this->translate('Message'); ?></th>
+                <th><?= $this->translate('Extra-Data'); ?></th>
+            </tr>
+        </thead>
+        <tbody>
+            <?PHP foreach ($this->items as $id => $i) : $modalid = 'extra-' . strtotime($i['timestamp']) . '-' . rand(0, 99999); ?>
+                <tr>
+                    <td><?= date('Y-m-d H:i:s', strtotime($i['timestamp'])); ?></td>
+                    <td><?= $i['priorityName']; ?></td>
+                    <td style="word-break: break-word;"><?= $i['message'] . (isset($i['extra']['message']) ? ': ' . htmlentities($i['extra']['message']) : ''); ?></td>
+                    <td>
+                        <a class="fb_auto_small election_auto_prevent_url" data-title="<?= $this->translate('Details'); ?>" data-content-element-selector="#error-<?= $id ?>"><?= $this->translate('Details'); ?></a>
+                        <div class="d-none"><pre id="error-<?= $id ?>"> <?PHP echo htmlentities(print_r($i['extra'], 1)); ?></pre></div>
+                    </td>
+                </tr>
+            <?PHP endforeach; ?>
+        </tbody>
+    </table>
+</div>

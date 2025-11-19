@@ -1,0 +1,22 @@
+// Callout styling
+// 1.0 - Main styling
+
+.callout {
+    --bs-link-color-rgb: var(--bs-callout-link);
+    --bs-code-color: var(--bs-callout-code-color);
+    padding: 1.25rem;
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
+    color: var(--bs-callout-color, inherit);
+    background-color: var(--bs-callout-bg, var(--bs-gray-100));
+    border-left: 0.25rem solid var(--bs-callout-border, var(--bs-gray-300));
+}
+
+// 2.0 - Callout Loop
+each(@bsFallbackLoop, {
+    .callout-@{key} {
+        --bs-callout-color:           .mixDark( if( isdefined(@bsTheme[@@key]), @bsTheme[@@key], @value ) , 40 )[];
+        --bs-callout-bg:              .mixLight( if( isdefined(@bsTheme[@@key]), @bsTheme[@@key], @value ) , 20 )[];
+        --bs-callout-border:      .mixLight( if( isdefined(@bsTheme[@@key]), @bsTheme[@@key], @value ) , 40 )[];
+    }
+});
