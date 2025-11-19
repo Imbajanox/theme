@@ -1,24 +1,27 @@
-// Badge styling
+// Badge styling - Modern Enterprise Design
 // 1.0 - Custom Styling
 
 .badge {
     + .badge {
-        margin-left: @gap ./ 2;
+        margin-left: @gap-xs;
     }
 }
 
 // 2.0 - Bootstrap Overwrite
 .badge {
-    --bs-badge-padding-x: calc(@gap * 0.5);
-    --bs-badge-padding-y: calc(@gap * 0.25);
-    --bs-badge-font-size: calc(@copyfontSize * 0.75);
-    --bs-badge-font-weight: 400;
+    --bs-badge-padding-x: @gap-sm;
+    --bs-badge-padding-y: @gap-xs;
+    --bs-badge-font-size: @font-size-xs;
+    --bs-badge-font-weight: @font-weight-medium;
     --bs-badge-color: #fff;
-    --bs-badge-border-radius: var(--bs-border-radius);
+    --bs-badge-border-radius: @radius-sm;
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
 }
 
 // 2.1 - Badge Loop
-// 2.1.1 - Normal Badge
+// 2.1.1 - Normal Badge with modern styling
 each(@bsFallbackLoop, {
     .badge.bg-@{key} {
         --bs-bg-opacity: 1;
