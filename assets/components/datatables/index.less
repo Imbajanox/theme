@@ -11,7 +11,7 @@
 }
 
 .dataTables_wrapper {
-    margin: @gap 0 @gap 0;
+    margin: @gap-lg 0 @gap-lg 0;
     width: 100%;
 
     &::after {
@@ -32,7 +32,7 @@
             text-align: left;
 
             a {
-                padding: calc(@gap / 4) calc(@gap / 4);
+                padding: @gap-xs @gap-sm;
                 display: block;
             }
         }
@@ -51,9 +51,9 @@
         }
 
         .dataTables_processing {
-            background-color: @g7;
-            padding: calc(@gap * 2);
-            color: @g1;
+            background-color: @g1;
+            padding: @gap-xl;
+            color: @g7;
             z-index: 100;
             position: fixed;
             left: 50%;
@@ -63,17 +63,18 @@
             height: 100px;
             margin-left: -100px;
             margin-top: -50px;
+            border-radius: @radius-md;
+            .elevation-3();
         }
     }
 
     .dataTables_length {
         float: left;
-        // margin-top: calc(@gap / 2);
-        margin-bottom: calc(@gap / 2);
+        margin-bottom: @gap-sm;
         min-width: max-content;
 
         label {
-            font-size: 80%;
+            font-size: @font-size-sm;
             display: flex;
             align-items: center;
             padding: 0;
@@ -82,19 +83,25 @@
             white-space: nowrap;
 
             select {
-                margin: 0 calc(@gap / 4);
-                background:#fff;
-                border: unset;
-                border:1px solid #d9d9d9;
+                margin: 0 @gap-xs;
+                background: @g1;
+                border: 1px solid @g4;
+                border-radius: @radius;
                 text-align: right;
-                font-size: 12px;
-                padding: 4px 4px;
-                color: rgb(55, 55, 55);
+                font-size: @font-size-sm;
+                padding: @gap-xs @gap-sm;
+                color: @g7;
                 cursor: pointer;
-                min-width: @gap * 3;
+                min-width: 60px;
+                .transition(200ms);
+                
+                &:focus {
+                    outline: none;
+                    border-color: @c1;
+                }
             }
         }
-        margin-right: @gap;
+        margin-right: @gap-md;
     }
 
     &:hover .dt-buttons {
@@ -149,9 +156,12 @@
     table.dataTable {
         width: 100%!important;
         max-width: 100%;
-        font-size: 14px;
-        border-spacing: 1px;
-        background-color: @g2;
+        font-size: @font-size-sm;
+        border-spacing: 0;
+        background-color: @g1;
+        border: 1px solid @g3;
+        border-radius: @radius-md;
+        overflow: hidden;
 
         .color-tag {
             display: inline-block;
@@ -162,19 +172,21 @@
 
             a.btn {
                 border: 1px solid @c1;
-                margin: calc(@gap / 2);
+                margin: @gap-sm;
                 margin-left: 0;
-                margin-right: @gap;
+                margin-right: @gap-md;
             }
         }
 
         thead {
-            background-color: @g1;
+            background-color: @g2;
 
             th {
-                padding: 0 calc(@gap / 4) 0 calc(@gap / 2);
-                font-weight: 300;
-                border: 1px solid @g2;
+                padding: @gap-sm @gap-md;
+                font-weight: @font-weight-semibold;
+                border: none;
+                border-bottom: 1px solid @g3;
+                color: @g7;
 
                 &:last-child {
                     border-right: none;
@@ -221,10 +233,11 @@
                     width: calc( 100% - 10px );
                     right: 0;
                     display: inline-block;
-                    padding: @gap * 0.2 @gap * 0.3;
+                    padding: @gap-xs @gap-sm;
                     text-align: left;
-                    border-radius: 0;
-                    border: none;
+                    border-radius: @radius;
+                    border: 1px solid @g4;
+                    background-color: @g1;
                 }
 
                 th:not(.noFilter) {
@@ -236,8 +249,10 @@
         tbody {
             tr {
                 background-color: @g1;
+                .transition(200ms);
 
                 &:hover {
+                    background-color: @g2;
 
                     td {
                         background-color: @g2;
@@ -259,10 +274,9 @@
                 }
 
                 td {
-                    padding: calc(@gap / 4);
-                    padding-left: calc(@gap / 2);
+                    padding: @gap-sm @gap-md;
                     vertical-align: top;
-                    border-bottom: 1px solid #F1F1F1;
+                    border-bottom: 1px solid @g3;
 
                     label {
                         padding: 0;
